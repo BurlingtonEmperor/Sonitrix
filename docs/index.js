@@ -72,6 +72,7 @@ next_frequency.onclick = function () {
   }
 
   default_button.innerText = String(frequency_list[freq_curr] / 1000) + " kHz";
+  playOverlap("select");
 }
 
 stop_emission.onclick = function () {
