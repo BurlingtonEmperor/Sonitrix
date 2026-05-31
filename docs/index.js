@@ -30,9 +30,16 @@ function stopTone() {
   }
 }
 
+// storage
+let frequency_list = [19500, 16000, 20000, 18000, 17000];
+let freq_curr = 0;
+
 // interface
 const default_button = document.getElementById("default-selection");
 const stop_emission = document.getElementById("stop-emission");
+const next_frequency = document.getElementById("next-frequency");
+
+const emission_status = document.getElementById("emission-status");
 
 // let has_played = 0;
 let is_playing = 0;
@@ -44,7 +51,8 @@ default_button.onclick = function () {
   }
 
   is_playing = 1;
-  startTone(default_frequency);
+  startTone(frequency_list[freq_curr]);
+  emission_status.style.display = "block";
 
 //   switch (has_played) {
 //     case 0:
@@ -57,11 +65,21 @@ default_button.onclick = function () {
 //   }
 }
 
+next_frequency.onclick = function () {
+  freq_curr += 1;
+  if (freq_curr >= (frequency_list.length)) {
+    freq_curr = 0;
+  }
+
+  default_button.innerText = String(frequency_list[freq_curr] / 1000) + " kHz";
+}
+
 stop_emission.onclick = function () {
   switch (is_playing) {
     case 1:
       stopTone();
       is_playing = 0;
+      emission_status.style.display = "none";
       break;
   }
 }
