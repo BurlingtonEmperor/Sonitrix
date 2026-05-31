@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Hornet";
+  src: url("hornet.ttf");
+}
+
+body, html {
+  margin: 0;
+}
+
+body {
+  color: red;
+  background-color: black;
+  font-family: "Hornet";
+  font-size: 3vw;
+}
+
+.parent {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.selection {
+  border: 1px solid red;
+  padding: 5px;
+  user-select: none;
+}
+
+.selection:hover {
+  background-color: #eb7e7e;
+}
+
+#selector {
+  border: 1px solid red;
+  padding: 20px;
+}
