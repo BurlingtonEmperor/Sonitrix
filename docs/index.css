@@ -15,6 +15,11 @@ body {
   /* font-size: 3vw; */
 }
 
+.upside-down {
+  display: inline-block; 
+  transform: rotate(180deg);
+}
+
 .parent {
   display: grid;
   place-items: center;
