@@ -11,7 +11,7 @@ body {
   color: red;
   background-color: black;
   font-family: "Hornet";
-  font-size: 3vw;
+  /* font-size: 3vw; */
 }
 
 .parent {
@@ -24,13 +24,28 @@ body {
   border: 1px solid red;
   padding: 5px;
   user-select: none;
+  text-align: center;
 }
 
 .selection:hover {
   background-color: #eb7e7e;
 }
 
+.blink-fade {
+  animation: fade 1.5s ease-in-out infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 #selector {
   border: 1px solid red;
   padding: 20px;
+}
+
+#emission-status {
+  text-align: center;
+  display: none;
 }
